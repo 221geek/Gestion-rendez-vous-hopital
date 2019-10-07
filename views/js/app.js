@@ -1,3 +1,9 @@
+$(document).ready(function(){
+    $(".gif").fadeOut(9000, function(){
+        $("#content").fadeIn(9000);
+    });
+})
+
 function traitementJS(){
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
@@ -18,7 +24,7 @@ function traitementJS(){
     }
     if(isEmail(email)){
         if (password != "" && password.length > 8) {
-            
+            /* envoyer les variables dans config/traitement.php pour verification dans la base de donnée */
         }
     }
     

@@ -1,6 +1,5 @@
 <?php
 	$title = "dalal diamm : connexion"; 
-	$style = "views/css/connexion.css";
 ?>
 <div class="connexion">
 	<img src="views/img/logodj.png" alt="logo">
