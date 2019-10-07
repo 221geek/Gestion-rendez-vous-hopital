@@ -12,7 +12,6 @@
     
     <?php echo $content; ?>
 
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../views/js/app.js"></script>
+    <script src="views/js/app.js"></script>
 </body>
 </html>

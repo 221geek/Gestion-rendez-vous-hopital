@@ -7,15 +7,16 @@
 	<form action="">
 		<div class="form-group">
 			<label for="">Adresse mail</label>
-			<input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Entrer votre adresse email">
-			<small id="emailHelp"><p class="hide">Adresse mail incorrecte</p></small>
+			<input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Entrer votre adresse email" id="email">
+			<small id="emailHelp" class="hide"></small>
 		</div>
 		<div class="form-group">
 			<label for="">Mot de passe</label>
-			<input type="password" class="form-control" aria-describedby="passwordHelp" placeholder="Entrer votre mot de passe">
-			<small id="emailHelp"><p class="hide">Mot de passe incorecte</p><small>
+			<input type="password" class="form-control" aria-describedby="passwordHelp" placeholder="Entrer votre mot de passe" id="password">
+			<small id="passwordHelp" class="hide"></small>
 		</div>
 		
-		<button type="submit" class="btn btn-primary">Se connecter</button>
+		<button type="button" class="btn btn-primary" onclick="traitementJS()">Se connecter</button>
+
 	</form>
 </div>
