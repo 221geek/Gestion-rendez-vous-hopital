@@ -1,5 +1,4 @@
 <?php
-	
 	$title = "dalal diamm : connexion"; 
 	$style = "views/css/connexion.css";
 ?>
@@ -17,6 +16,6 @@
 			<small id="emailHelp"><p class="hide">Mot de passe incorecte</p><small>
 		</div>
 		
-		<button type="submit" class="btn btn-primary">Submit</button>
+		<button type="submit" class="btn btn-primary">Se connecter</button>
 	</form>
 </div>

@@ -11,7 +11,7 @@ body{
 	height: 500px;
 	margin-left: -400px;
     margin-top: -250px;
-    background-color: rgba(255, 255, 255, 0.432);
+    background-color: rgba(255, 255, 255, 0.137);
     border-radius: 15px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.616);
     display: flex;
@@ -26,17 +26,19 @@ input{
     min-width: 400px;
 }
 .btn{
-    background-color: #4CAF50;
+    background-color: rgb(17, 82, 20);
     border: none;
     width: 100%;
     transition: 0.4s all;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.521);
 }
 small p{
     text-align: right;
     color: red;
 }
 .btn:hover{
-    background-color: rgb(29, 97, 31);
+    background-color: rgb(41, 97, 43);
+    box-shadow: none;
 }
 .hide{
     visibility: hidden;

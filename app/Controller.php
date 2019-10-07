@@ -3,7 +3,7 @@
     class Controller{
 
         public function index(){
-            afficher("home");
+            afficher("seConnecter");
         }
         public function error(){
             afficher("erreur");
