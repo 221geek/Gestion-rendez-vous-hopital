@@ -22,7 +22,7 @@ function traitementJS(){
             erreurPassword.innerHTML += '<p>Veillez indiquer votre mot de passe svp</p>'
         }
     }
-    if (!isEmail(email)) {
+    if (!isEmail(email)){
         erreurMail.classList.remove("hide")
         inputEmail.classList.add("borderRed")
         if (erreurMail.innerHTML === "") {
@@ -31,7 +31,7 @@ function traitementJS(){
     }
     if(isEmail(email)){
         if (password != "" && password.length > 8) {
-            /* envoyer les variables dans config/traitement.php pour verification dans la base de donnée */
+            /*  */
         }
     }
     
