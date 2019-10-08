@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php echo $title; ?></title>
     <link rel="shortcut icon" href="views/img/logo.ico">
+    <link rel="stylesheet" href="node_modules/fontawesome/css/all.min.css" class="rel">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" class="rel">
     <link rel="stylesheet" href="views/css/main.css" class="rel">
 

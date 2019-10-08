@@ -44,6 +44,9 @@ body{
     height: 100%;
 }
 
+.borderRed{
+    border: solid 1px red;
+}
 
 /*    PAGE DE CONNEXION    */
     .connexion{

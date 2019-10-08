@@ -5,25 +5,26 @@ $(document).ready(function(){
 })
 
 function traitementJS(){
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-    var erreurMail = document.getElementById("emailHelp");
-    var erreurPassword = document.getElementById("passwordHelp");
+    var email = document.getElementById("email").value, password = document.getElementById("password").value, erreurMail = document.getElementById("emailHelp"), erreurPassword = document.getElementById("passwordHelp"), inputEmail = document.getElementById("email"), inputPassword = document.getElementById("password");
+
 
     if(email === ""){
         erreurMail.classList.remove("hide")
+        inputEmail.classList.add("borderRed")
         if (erreurMail.innerHTML === "") {
             erreurMail.innerHTML += '<p>Veillez indiquer votre adresse mail svp</p>'
         }
     }
     if(password === ""){
         erreurPassword.classList.remove("hide")
+        inputPassword.classList.add("borderRed")
         if (erreurPassword.innerHTML === ""){
             erreurPassword.innerHTML += '<p>Veillez indiquer votre mot de passe svp</p>'
         }
     }
     if (!isEmail(email)) {
         erreurMail.classList.remove("hide")
+        inputEmail.classList.add("borderRed")
         if (erreurMail.innerHTML === "") {
             erreurMail.innerHTML += '<p>Adresse mail incorrecte</p>'
         }
