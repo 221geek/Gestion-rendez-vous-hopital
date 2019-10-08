@@ -1,6 +1,6 @@
 $(document).ready(function(){
-    $(".gif").fadeOut(9000, function(){
-        $("#content").fadeIn(9000);
+    $(".gif").fadeOut(5000, function(){
+        $("#content").fadeIn(5000);
     });
 })
 
@@ -12,15 +12,15 @@ function traitementJS(){
 
     if(email === ""){
         erreurMail.classList.remove("hide")
-        erreurMail.innerHTML += '<p>Veillez indiquer votre adresse mail svp</p>'
+        if (erreurMail.innerHTML === "") {
+            erreurMail.innerHTML += '<p>Veillez indiquer votre adresse mail svp</p>'
+        }
     }
     if(password === ""){
         erreurPassword.classList.remove("hide")
-        erreurPassword.innerHTML += '<p>Veillez indiquer votre mot de passe svp</p>'
-    }
-    if (password.length < 8){
-        erreurPassword.classList.remove("hide")
-        erreurPassword.innerHTML += '<p>Mot de passe incorrecte</p>'
+        if (erreurPassword.innerHTML === ""){
+            erreurPassword.innerHTML += '<p>Veillez indiquer votre mot de passe svp</p>'
+        }
     }
     if(isEmail(email)){
         if (password != "" && password.length > 8) {
@@ -33,4 +33,4 @@ function traitementJS(){
 function isEmail(mail){
     var regEmail = new RegExp('^[0-9a-z._-]+@{1}[0-9a-z.-]{2,}[.]{1}[a-z]{2,5}$','i');
     return regEmail.test(mail);
-  }
+}
