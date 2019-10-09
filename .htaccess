@@ -1,4 +1,4 @@
 RewriteEngine on
 
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ /var/www/html/hopital/public/index.php
+RewriteRule ^(.*)$ /opt/lampp/htdocs/hopital/public/index.php
