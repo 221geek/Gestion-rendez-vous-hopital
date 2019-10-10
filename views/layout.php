@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="node_modules/fontawesome/css/all.min.css" class="rel">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" class="rel">
     <link rel="stylesheet" href="views/css/main.css" class="rel">
+    <link rel="stylesheet" href="<?php echo $style; ?>" class="rel">
 
 </head>
 <body>
@@ -21,6 +22,8 @@
     </div>
 
     <script type="text/javascript"src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="views/js/app.js"></script>
 </body>
 </html>

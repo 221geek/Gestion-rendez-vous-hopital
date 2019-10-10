@@ -1,5 +1,5 @@
 <?php
-   /*  class Connexion
+    class Connexion
     {
         private $_mail;
         private $_mdp;
@@ -11,7 +11,4 @@
             $this->_bdd = $bdd;
         }
 
-        public function query($statement){
-            
-        }
-    } */
+    }

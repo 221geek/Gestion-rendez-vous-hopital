@@ -1,5 +1,7 @@
 <?php
 	$title = "dalal diamm : connexion";
+	$style = "views/css/connexion.css";
+	
 	$form = new Form();
 	$email = "email";
 	$passw = "password";

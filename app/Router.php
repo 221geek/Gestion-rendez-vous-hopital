@@ -2,9 +2,16 @@
 
     $controller = new Controller();
 
-    if ($url == "/hopital/") {
-        $controller->index();
-    }
-    else{
-        $controller->error();
+    switch ($url){
+
+        case "/hopital/":
+            $controller->index();
+        break;
+
+        case "/hopital/admin":
+            $controller->admin();
+        break;
+
+        default:
+            $controller->error();
     }
