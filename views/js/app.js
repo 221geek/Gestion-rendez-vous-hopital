@@ -3,15 +3,14 @@ function isEmail(mail){
     return regEmail.test(mail);
 }
 
-
 $(document).ready(function(){
     $(".gif").fadeOut(4000, function(){
         $("#content").fadeIn(4000);
     });
 })
 
-
 function traitementJS(){
+    
     var email = document.getElementById("email").value, password = document.getElementById("password").value, erreurMail = document.getElementById("emailHelp"), erreurPassword = document.getElementById("passwordHelp"), inputEmail = document.getElementById("email"), inputPassword = document.getElementById("password");
 
     if(email === ""){

@@ -3,10 +3,31 @@
 	$form = new Form();
 	$email = "email";
 	$passw = "password";
+	$role = "role";
 ?>
 <div class="connexion">
+
 	<img src="views/img/logodj.png" alt="logo">
+
 	<form action="app/config/traitement.php" method="POST">
+
+		<div class="form-group">
+			<?php
+				echo $form->label($role, 'Role');
+			?>
+			<select class="custom-select" name="role">
+				<option selected>Selectionner votre role</option>
+					<?php
+						echo $form->option("administrateur");
+						echo $form->option("medecin");
+						echo $form->option("secretaire");
+					?>
+			</select>
+			<?php
+				echo $form->messageErreur($role);
+			?>
+		</div>
+
 		<div class="form-group">
 			<?php
 				echo $form->label($email, "Adresse Email");
