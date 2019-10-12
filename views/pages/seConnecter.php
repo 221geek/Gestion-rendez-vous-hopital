@@ -18,7 +18,6 @@
 				echo $form->label($role, 'Role');
 			?>
 			<select class="custom-select" name="role">
-				<option selected>Selectionner votre role</option>
 					<?php
 						echo $form->option("administrateur");
 						echo $form->option("medecin");
@@ -33,20 +32,21 @@
 		<div class="form-group">
 			<?php
 				echo $form->label($email, "Adresse Email");
-				echo $form->input($email);
+				echo $form->input($email, "Entrer votre adresse mail");
 				echo $form->messageErreur($email);
 			?>
 		</div>
+
 		<div class="form-group">
 			<?php
 				echo $form->label($passw, "Mot de passe");
-				echo $form->input($passw);
+				echo $form->input($passw, "enter votre mot de passe");
 				echo $form->messageErreur($passw);
 			?>
 		</div>
 		
 		<?php
-			echo $form->submit();
+			echo $form->submit("SE CONNECTER");
 		?>
 
 	</form>

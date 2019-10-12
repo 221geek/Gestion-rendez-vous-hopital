@@ -1,4 +1,11 @@
 <?php 
+    session_start();
+/* 
+    if (!isset($_SESSION['id']) || $_SESSION['password'] !== 'tonpassword') {
+        header('Location: ./');
+        exit;
+    } */
+
     $title = "Tableau de bord";
     $style = "views/css/dashbord.css";
     $form = new Form();
@@ -6,13 +13,17 @@
 
     $bd = Database::getPDO();
 
-    $statement = $bd->query("SELECT * FROM services");
-    $services = $statement->fetchAll();
+    $statement = $bd->query("SELECT service FROM services");
+    $services = $statement->fetchAll(PDO::FETCH_ASSOC);
+
     foreach ($services as $service){
-        var_dump($service->service);
+        $tableService[] = implode(', ', array_values($service));
     }
+    sort($tableService);
+
+    
 ?>
-<!-- 
+
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <a class="navbar-brand" href="#">
         <img src="views/img/logodj.png" alt="logo">
@@ -24,9 +35,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <img src="views/img/user.png" class="rounded-circle" alt="">
-                </a>
+                <img src="views/img/user.png" class="rounded-circle" alt="">
             </li>
         </ul>
     </div>
@@ -90,9 +99,9 @@
                         <select class="custom-select" name="role">
                             <option selected>Selectionner le service du secretaire</option>
                                 <?php
-                                    echo $form->option("service 1");
-                                    echo $form->option("service 2");
-                                    echo $form->option("service 3");
+                                    for ($i=0; $i < sizeof($tableService); $i++) { 
+                                        echo $form->option(($tableService[$i]));
+                                    }
                                 ?>
                         </select>
                     </div>
@@ -114,6 +123,7 @@
                     ?>
 
                 </form>
+                
             </div>
         </div>
         <div class="collapse" id="supprimer">
@@ -127,4 +137,4 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>
