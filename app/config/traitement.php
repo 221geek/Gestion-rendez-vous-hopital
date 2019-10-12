@@ -11,7 +11,7 @@
         $email = htmlspecialchars($_POST['email']);
         $password = $_POST['password'];
 
-        $requete = $bdd->prepare('SELECT id FROM administrateur WHERE mail = :mail AND pass = :pass');
+        $requete = $bdd->prepare('SELECT id FROM administrateur WHERE mail = :mail AND password = :pass');
         $requete->execute(array(
                 'mail' => $email,
                 'pass' => $password
@@ -27,7 +27,10 @@
             $_SESSION['mail'];
 
             if ($role = "administrateur") {
-                echo "hello";
+                header('Location: ../../admin');
+            }
+            else{
+                echo "ok";
             }
         }
     }
