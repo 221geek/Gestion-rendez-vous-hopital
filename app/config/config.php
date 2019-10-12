@@ -1,6 +1,3 @@
 <?php
-/* 
-    require "bddConnect.class.php";
-
-    $pdo = BddConnect::getPDO();
- */
+    require "../app/class/database.class.php";
+    require "../app/class/Form.class.php";
