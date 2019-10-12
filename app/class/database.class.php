@@ -1,7 +1,6 @@
 <?php
     class Database
     {
-
         private static $pdoInstance = null;
 
         public static function getPDO(): PDO{

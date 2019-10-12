@@ -23,7 +23,12 @@
         } else {
             session_start();
 
-            $_SESSION['mail'] = $email;
+            $_SESSION['id'] = $result->{'id'};
+            $_SESSION['mail'];
+
+            if ($role = "administrateur") {
+                echo "hello";
+            }
         }
     }
     else{
