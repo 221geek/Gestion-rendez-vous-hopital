@@ -1,10 +1,10 @@
 <?php 
     session_start();
-/* 
-    if (!isset($_SESSION['id']) || $_SESSION['password'] !== 'tonpassword') {
+
+    if (!isset($_SESSION['id'])) {
         header('Location: ./');
         exit;
-    } */
+    }
 
     $title = "Tableau de bord";
     $style = "views/css/dashbord.css";

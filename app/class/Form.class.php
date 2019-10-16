@@ -1,10 +1,6 @@
 <?php   
     class Form {
 
-        public function option($name){
-            return '<option value="'.$name.'">'.$name.'</option>';
-        }
-
         public function label($name, $text){
             return '<label for="'.$name.'">'.$text.'</label>';
         }
@@ -14,7 +10,7 @@
         }
 
         public function submit($name){
-            return '<button type="submit" class="btn btn-primary" id="submit-btn" name='.$name.'>'.$name.'</button>';
+            return '<button type="submit" class="btn btn-primary" id="submit-btn" name="submit">'.$name.'</button>';
         }
 
         public function messageErreur($name){
