@@ -28,7 +28,7 @@
 				echo $form->label($role, 'Role');
 			?>
 			<select class="form-control" name="role" id="role">
-				<option value="">Votre role</option>
+				<option value="" selected>Votre role</option>
 				<?php
 					for ($i=0; $i < sizeof($tablerole); $i++) { 
 						echo $form->option($tablerole[$i]);
