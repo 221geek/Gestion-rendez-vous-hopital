@@ -12,6 +12,10 @@
             $controller->admin();
         break;
 
+        case "/hopital/test":
+            $controller->test();
+        break;
+
         default:
             $controller->error();
     }

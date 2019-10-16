@@ -11,4 +11,7 @@
         public function error(){
             afficher("erreur");
         }
+        public function test(){
+            afficher("test");
+        }
     }
