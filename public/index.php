@@ -15,4 +15,3 @@
     require "../app/config/config.php";
     require "../app/Controller.php";
     require "../app/Router.php";
-

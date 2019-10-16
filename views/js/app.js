@@ -9,8 +9,11 @@ $(document).ready(function(){
     });
 })
 
-function traitementJS(){
-    
+
+function traitementJS(f){
+
+
+    /* 
     var email = document.getElementById("email").value, password = document.getElementById("password").value, erreurMail = document.getElementById("emailHelp"), erreurPassword = document.getElementById("passwordHelp"), inputEmail = document.getElementById("email"), inputPassword = document.getElementById("password");
 
     if(email === ""){
@@ -39,5 +42,5 @@ function traitementJS(){
             $('#submit-btn').removeAttr('type');
             $('#submit-btn').attr('type','submit');
         }
-    }
+    } */
 }

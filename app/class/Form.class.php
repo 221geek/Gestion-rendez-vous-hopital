@@ -1,10 +1,6 @@
 <?php   
     class Form {
 
-        public function option($name){
-            return '<option value="'.$name.'">'.$name.'</option>';
-        }
-
         public function label($name, $text){
             return '<label for="'.$name.'">'.$text.'</label>';
         }

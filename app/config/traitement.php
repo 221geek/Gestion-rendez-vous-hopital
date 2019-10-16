@@ -1,34 +1,41 @@
 <?php
 
     if (isset($_POST['submit'])){
-        require "../class/verification.class.php";
-        require "../class/database.class.php";
-        
-        $verification = new Verifie();
-        $bdd = Database::getPDO();
 
-        $role = $_POST['role'];
-        $email = htmlspecialchars($_POST['email']);
-        $password = $_POST['password'];
+        if (!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['role'])) {
 
-        $requete = $bdd->prepare('SELECT id FROM administrateur WHERE mail = :mail AND pass = :pass');
-        $requete->execute(array(
-                'mail' => $email,
-                'pass' => $password
-            ));
-        $result = $requete->fetch();
+            require "../class/verification.class.php";
+            require "../class/database.class.php";
+            
+            $verification = new Verifie();
+            $bdd = Database::getPDO();
 
-        if (!$result) {
-            header('Location: ../../');
-        } else {
-            session_start();
+            $role = $_POST['role'];
+            $email = htmlspecialchars($_POST['email']);
+            $password = $_POST['password'];
 
-            $_SESSION['id'] = $result->{'id'};
-            $_SESSION['mail'];
+            $requete = $bdd->prepare('SELECT id FROM users WHERE mail = :mail AND pass = :pass');
+            $requete->execute(array(
+                    'mail' => $email,
+                    'pass' => $password
+                ));
+            $result = $requete->fetch();
 
-            if ($role = "administrateur") {
-                echo "hello";
+            if (!$result) {
+                header("Location: ../../");
+            } else {
+                session_start();
+
+                $_SESSION['id'] = $result->{'id'};
+                $_SESSION['mail'] = $email;
+
+                if ($role == "administrateur") {
+                    header('Location: ../../admin');
+                }
             }
+        }
+        else{
+            header('Location: ../../');
         }
     }
     else{
