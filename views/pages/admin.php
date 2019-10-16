@@ -1,6 +1,7 @@
 <?php 
     session_start();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     if (!isset($_SESSION['id'])) {
         header('Location: ./');
@@ -13,6 +14,13 @@
         exit;
     } */
 >>>>>>> 6af24c1eb898bed229b736298c58b8624170b8b2
+=======
+
+    if (!isset($_SESSION['id'])) {
+        header('Location: ./');
+        exit;
+    }
+>>>>>>> 1160059ec06d57d029ab899cd3ca12fd0259f404
 
     $title = "Tableau de bord";
     $style = "views/css/dashbord.css";

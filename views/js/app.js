@@ -10,15 +10,21 @@ $(document).ready(function(){
 })
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1160059ec06d57d029ab899cd3ca12fd0259f404
 
 function traitementJS(f){
 
 
     /* 
+<<<<<<< HEAD
 =======
 function traitementJS(){
     
 >>>>>>> 6af24c1eb898bed229b736298c58b8624170b8b2
+=======
+>>>>>>> 1160059ec06d57d029ab899cd3ca12fd0259f404
     var email = document.getElementById("email").value, password = document.getElementById("password").value, erreurMail = document.getElementById("emailHelp"), erreurPassword = document.getElementById("passwordHelp"), inputEmail = document.getElementById("email"), inputPassword = document.getElementById("password");
 
     if(email === ""){
@@ -48,9 +54,14 @@ function traitementJS(){
             $('#submit-btn').attr('type','submit');
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
     } */
 }
 =======
     }
 }
 >>>>>>> 6af24c1eb898bed229b736298c58b8624170b8b2
+=======
+    } */
+}
+>>>>>>> 1160059ec06d57d029ab899cd3ca12fd0259f404
