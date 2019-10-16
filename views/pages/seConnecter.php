@@ -6,6 +6,16 @@
 	$email = "email";
 	$passw = "password";
 	$role = "role";
+
+	$bd = Database::getPDO();
+
+    $statement = $bd->query("SELECT role FROM role");
+    $roles = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach ($roles as $key){
+        $tablerole[] = implode(', ', array_values($key));
+    }
+    sort($tablerole);
 ?>
 <div class="connexion">
 
@@ -17,6 +27,14 @@
 			<?php
 				echo $form->label($role, 'Role');
 			?>
+			<select class="form-control" name="role" id="role">
+				<option value="">Votre role</option>
+				<?php
+					for ($i=0; $i < sizeof($tablerole); $i++) { 
+						echo $form->option($tablerole[$i]);
+					}
+				?>
+			</select>
 			<?php
 				echo $form->messageErreur($role);
 			?>

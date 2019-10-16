@@ -5,6 +5,10 @@
             return '<label for="'.$name.'">'.$text.'</label>';
         }
 
+        public function option($name){
+            return '<option value='.$name.'>'.$name.'</option>';
+        }
+
         public function input($name, $placeholder){
             return '<input type="'.$name.'" class="form-control" name="'.$name.'" aria-describedby="'.$name.'Help" placeholder='.$placeholder.' id="'.$name.'">';
         }
