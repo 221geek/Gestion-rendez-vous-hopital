@@ -1,6 +1,13 @@
 <?php   
     class Form {
 
+<<<<<<< HEAD
+=======
+        public function option($name){
+            return '<option value="'.$name.'">'.$name.'</option>';
+        }
+
+>>>>>>> 6af24c1eb898bed229b736298c58b8624170b8b2
         public function label($name, $text){
             return '<label for="'.$name.'">'.$text.'</label>';
         }

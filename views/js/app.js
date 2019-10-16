@@ -9,11 +9,16 @@ $(document).ready(function(){
     });
 })
 
+<<<<<<< HEAD
 
 function traitementJS(f){
 
 
     /* 
+=======
+function traitementJS(){
+    
+>>>>>>> 6af24c1eb898bed229b736298c58b8624170b8b2
     var email = document.getElementById("email").value, password = document.getElementById("password").value, erreurMail = document.getElementById("emailHelp"), erreurPassword = document.getElementById("passwordHelp"), inputEmail = document.getElementById("email"), inputPassword = document.getElementById("password");
 
     if(email === ""){
@@ -42,5 +47,10 @@ function traitementJS(f){
             $('#submit-btn').removeAttr('type');
             $('#submit-btn').attr('type','submit');
         }
+<<<<<<< HEAD
     } */
 }
+=======
+    }
+}
+>>>>>>> 6af24c1eb898bed229b736298c58b8624170b8b2

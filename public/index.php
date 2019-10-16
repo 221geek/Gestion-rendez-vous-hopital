@@ -14,4 +14,9 @@
 
     require "../app/config/config.php";
     require "../app/Controller.php";
+<<<<<<< HEAD
     require "../app/Router.php";
+=======
+    require "../app/Router.php";
+
+>>>>>>> 6af24c1eb898bed229b736298c58b8624170b8b2
