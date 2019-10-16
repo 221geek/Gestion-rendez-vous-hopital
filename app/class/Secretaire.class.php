@@ -2,6 +2,7 @@
 
     class Secretaire extends Database
     {
+        private $_id;
         private $_nom;
         private $_prenom;
         private $_mail;
@@ -33,6 +34,9 @@
         }
 
         /* SETTERS */
+        public function setid($id){
+            $this->_id = $id;
+        }
         public function setNom($nom){
             $this->_nom = $nom;
         }

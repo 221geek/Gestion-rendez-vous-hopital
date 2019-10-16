@@ -17,13 +17,6 @@
 			<?php
 				echo $form->label($role, 'Role');
 			?>
-			<select class="custom-select" name="role">
-					<?php
-						echo $form->option("administrateur");
-						echo $form->option("medecin");
-						echo $form->option("secretaire");
-					?>
-			</select>
 			<?php
 				echo $form->messageErreur($role);
 			?>
