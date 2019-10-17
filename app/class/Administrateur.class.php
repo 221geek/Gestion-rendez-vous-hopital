@@ -1,14 +1,13 @@
 <?php
 
-    class Secretaire extends Database
+    class Administrateur extends Database
     {
         private $_id;
         private $_nom;
         private $_prenom;
         private $_mail;
         private $_pass;
-        private $_service;
-        private $_id_role = 2;
+        private $_id_role = 1;
 
         /* GUETTERS */
         public function getId(){
@@ -25,9 +24,6 @@
         }
         public function getPass(){
             return $this->_pass;
-        }
-        public function getService(){
-            return $this->_service;
         }
         public function getId_Role(){
             return $this->_id_role;
@@ -54,10 +50,6 @@
         public function setPass($pass){
             $this->_pass = $pass;
         }
-        public function setService($service){
-            $this->_service = $service;
-        }
-
         public function hydrate(array $donnees){
             foreach ($donnees as $key => $value) {
                 $method = 'set'.ucfirst($key);

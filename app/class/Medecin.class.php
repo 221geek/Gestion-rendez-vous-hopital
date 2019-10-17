@@ -1,6 +1,6 @@
 <?php
 
-    class Secretaire extends Database
+    class Medecin extends Database
     {
         private $_id;
         private $_nom;
@@ -8,7 +8,8 @@
         private $_mail;
         private $_pass;
         private $_service;
-        private $_id_role = 2;
+        private $_specialite;
+        private $_id_role = 3;
 
         /* GUETTERS */
         public function getId(){
@@ -31,6 +32,9 @@
         }
         public function getId_Role(){
             return $this->_id_role;
+        }
+        public function getSpecialite(){
+            return $this->_specialite;
         }
 
         /* SETTERS */
@@ -56,6 +60,9 @@
         }
         public function setService($service){
             $this->_service = $service;
+        }
+        public function setSpecialite($spe){
+            $this->_specialite = $spe;
         }
 
         public function hydrate(array $donnees){

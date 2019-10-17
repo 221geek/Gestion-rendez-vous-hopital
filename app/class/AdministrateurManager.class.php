@@ -1,7 +1,7 @@
 <?php
-    class SecretaireManager extends Database
+    class AdministrateurManager extends Database
     {
-        public function add(Secretaire $objet){
+        public function add(Administrateur $objet){
             $pdo = Database::getPDO();
 
             $sql1 = "INSERT INTO users(nom, prenom, mail, pass, id_role) VALUES(:nom, :prenom, :mail, :passw, :id_role)";
@@ -12,16 +12,9 @@
             $req->bindValue(':passw', $objet->getPass());
             $req->bindValue(':id_role', $objet->getId_Role());
             $req->execute();
-
-            $objet->setId();
-            $sql2 = "INSERT INTO secretaires(id, id_services) VALUES(:id, :services)";
-            $req2 = $pdo->prepare($sql2);
-            $req2->bindValue(':id', $objet->getId());
-            $req2->bindValue(':services', $objet->getService());
-            $req2->execute();
         }
 
-        public function update(Secretaire $objet){
+        public function update(Administrateur $objet){
             $pdo = Database::getPDO();
             $objet->setId();
             
@@ -35,24 +28,13 @@
             $req->bindValue(':id_role', $objet->getId_Role());
 
             $req->execute();
-
-            $req2 = $pdo->prepare("UPDATE secretaires SET id_services = :services WHERE id = :id");
-
-            $req2->bindValue(':id', $objet->getId());
-            $req2->bindValue(':services', $objet->getService());
-
-            $req2->execute();
         }
         
-        public function delete(Secretaire $objet){
+        public function delete(Administrateur $objet){
             $pdo = Database::getPDO();
             $objet->setId();
-            $req = $pdo->prepare('DELETE FROM secretaires WHERE id= :id');
+            $req = $pdo->prepare('DELETE FROM users WHERE id= :id');
             $req->bindValue(":id", $objet->getId());
             $req->execute();
-
-            $req2 = $pdo->prepare('DELETE FROM users WHERE id= :id');
-            $req2->bindValue(":id", $objet->getId());
-            $req2->execute();
         }
     }

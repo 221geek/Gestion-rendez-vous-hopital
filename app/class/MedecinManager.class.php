@@ -1,7 +1,7 @@
 <?php
-    class SecretaireManager extends Database
+    class MedecinManager extends Database
     {
-        public function add(Secretaire $objet){
+        public function add(Medecin $objet){
             $pdo = Database::getPDO();
 
             $sql1 = "INSERT INTO users(nom, prenom, mail, pass, id_role) VALUES(:nom, :prenom, :mail, :passw, :id_role)";
@@ -14,14 +14,15 @@
             $req->execute();
 
             $objet->setId();
-            $sql2 = "INSERT INTO secretaires(id, id_services) VALUES(:id, :services)";
+            $sql2 = "INSERT INTO medecins(id, id_services, id_specialites) VALUES(:id, :services, :specialites)";
             $req2 = $pdo->prepare($sql2);
             $req2->bindValue(':id', $objet->getId());
             $req2->bindValue(':services', $objet->getService());
+            $req2->bindValue(':specialites', $objet->getSpecialite());
             $req2->execute();
         }
 
-        public function update(Secretaire $objet){
+        public function update(Medecin $objet){
             $pdo = Database::getPDO();
             $objet->setId();
             
@@ -36,18 +37,19 @@
 
             $req->execute();
 
-            $req2 = $pdo->prepare("UPDATE secretaires SET id_services = :services WHERE id = :id");
+            $req2 = $pdo->prepare("UPDATE medecins SET id_services = :services, id_specialites = :specialite WHERE id = :id");
 
             $req2->bindValue(':id', $objet->getId());
             $req2->bindValue(':services', $objet->getService());
+            $req2->bindValue(':specialite', $objet->getSpecialite());
 
             $req2->execute();
         }
         
-        public function delete(Secretaire $objet){
+        public function delete(Medecin $objet){
             $pdo = Database::getPDO();
             $objet->setId();
-            $req = $pdo->prepare('DELETE FROM secretaires WHERE id= :id');
+            $req = $pdo->prepare('DELETE FROM medecins WHERE id= :id');
             $req->bindValue(":id", $objet->getId());
             $req->execute();
 
