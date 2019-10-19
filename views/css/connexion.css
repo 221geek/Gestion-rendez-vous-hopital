@@ -1,55 +1,75 @@
-#content{
-    background-color: #4CAF50;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
 }
 
-.borderRed{
-    border: solid 1px red;
+body{ background: #4CAF50; }
+
+.cont{
+  position: relative;
+  width: 25%;
+  height: 400px;
+  padding: 10px 25px;
+  margin: 10vh auto;
+  background: #fff;
+  border-radius: 8px;
 }
 
-/*    PAGE DE CONNEXION    */
-    .connexion{
-        position:absolute;
-        left: 50%;
-        top: 50%;
-        width: 800px;
-        height: 600px;
-        margin-left: -400px;
-        margin-top: -300px;
-        background-color: rgba(255, 255, 255, 0.137);
-        border-radius: 15px;
-        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.616);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-    }
-    .connexion img{
-        width: 150px;
-    }
-    .connexion input{
-        min-width: 400px;
-    }
-    .connexion .btn{
-        background-color: rgb(17, 82, 20);
-        border: none;
-        width: 100%;
-        transition: 0.4s all;
-        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.521);
-    }
-    .connexion small p{
-        text-align: right;
-        color: red;
-    }
-    .connexion .btn:hover{
-        background-color: rgb(41, 97, 43);
-        box-shadow: none;
-    }
-    .connexion .hide{
-        visibility: hidden;
-    }
-/*      FIN PAGE DE CONNEXION    */
+.form{ width: 100%; height: 100%; }
+
+h1, h2, .user, .pass{ 
+  text-align: center;
+  display: block;
+}
+
+h1{ 
+  color: #606060;
+  font-weight: bold;
+  font-size: 40px;
+  margin: 30px auto;
+}
+
+.user, .pass, .login{
+  width: 100%;
+  height: 45px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: lighter;
+  margin-bottom: 30px;
+}
+
+.user, .pass{ background: #ecf0f1; }
+
+.login{
+  color: #fff;
+  cursor: pointer;
+  margin-top: 20px;
+  background: #4CAF50;
+  transition: background 0.4s ease;
+}
+
+.login:hover{ background: #2E7D32; }
+
+@media only screen and (min-width : 280px) {
+  .cont{ width: 90% }
+}
+
+@media only screen and (min-width : 480px) {
+  .cont{ width: 60% }
+}
+
+@media only screen and (min-width : 768px) {
+  .cont{ width: 40% }
+}
+
+@media only screen and (min-width : 992px) {
+  .cont{ width: 30% }
+}
+
+h2{ color: #fff; margin-top: 25px; }

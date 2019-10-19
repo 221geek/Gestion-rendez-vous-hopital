@@ -9,12 +9,12 @@
             return '<option value='.$name.'>'.$name.'</option>';
         }
 
-        public function input($name, $placeholder){
-            return '<input type="'.$name.'" class="form-control" name="'.$name.'" aria-describedby="'.$name.'Help" placeholder='.$placeholder.' id="'.$name.'">';
+        public function input($name, $placeholder, $classe){
+            return '<input type="'.$name.'" class="'.$classe.'" name="'.$name.'" placeholder='.$placeholder.' id="'.$name.'">';
         }
 
-        public function submit($name){
-            return '<button type="submit" class="btn btn-primary" id="submit-btn" name="submit">'.$name.'</button>';
+        public function submit($name, $class){
+            return '<button type="submit" class="'.$class.'" id="submit-btn" name="submit">'.$name.'</button>';
         }
 
         public function messageErreur($name){

@@ -12,6 +12,10 @@
             $controller->admin();
         break;
 
+        case "/hopital/secretaire":
+            $controller->secretaire();
+        break;
+
         case "/hopital/test":
             $controller->test();
         break;

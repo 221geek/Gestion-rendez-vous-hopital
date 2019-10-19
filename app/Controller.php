@@ -8,6 +8,9 @@
         public function admin(){
             afficher("admin");
         }
+        public function secretaire(){
+            afficher("secretaire");
+        }
         public function error(){
             afficher("erreur");
         }

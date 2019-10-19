@@ -1,10 +1,10 @@
-<?php 
+<?php /* 
     session_start();
 
     if (!isset($_SESSION['id'])) {
         header('Location: ./');
         exit;
-    }
+    } */
 
     $title = "Tableau de bord";
     $style = "views/css/dashbord.css";
@@ -20,121 +20,72 @@
         $tableService[] = implode(', ', array_values($service));
     }
     sort($tableService);
-
     
 ?>
+<div class="head">
+    <div class="container">
+        <p>Bonjour <?php echo $firstname .' '.$lastname; ?></p>
+        <a href="#">Deconnexion</a>
+    </div>
+</div>
 
-<nav class="navbar navbar-expand-lg navbar-light fixed-top">
-    <a class="navbar-brand" href="#">
-        <img src="views/img/logodj.png" alt="logo">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="views/img/logodj.png" alt="">
+        </a>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <img src="views/img/user.png" class="rounded-circle" alt="">
-            </li>
-        </ul>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Tableau de bord</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Rendez-vous</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Messagerie</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link " href="#">Mon profil</a>
+                </li>
+
+            </ul>
+        </div>
     </div>
 </nav>
 
-<div class="row">
-    <div class="col-md-2">
-        <h3>Admin</h3>
-        <ul>
-            <a href="#"><li>ADMINISTRATEUR</li></a>
-            <a href="#"><li class="active">SECRETAIRES</li></a>
-            <a href="#"><li>MEDECINS</li></a>
-        </ul>
+<div class="content container">
+    <div class="blocs">
+        <div class="flotte">
+            <em class="fa fa-calendar-alt"></em>
+            <div class="right">
+                <p></p>
+                <button>Cliquer ici</button>
+            </div>
+        </div>
+        <a href="#">
+        <div class="flotte">
+            <em class="fa fa-envelope"></em>
+            <h2>Secretaire</h2>
+        </div>
+        </a>
+        <div class="flotte">
+            <em class="fa fa-user"></em>
+            <div class="right">
+                <p>Medecins</p>
+                <button>Cliquer ici</button>
+            </div>
+        </div>
     </div>
-    <div class="col-md-10">
-        <p>
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#lister" aria-expanded="false" aria-controls="collapseExample">
-                Lister
-            </button>
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#ajouter" aria-expanded="false" aria-controls="collapseExample">
-                Ajouter
-            </button>
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#supprimer" aria-expanded="false" aria-controls="collapseExample">
-                supprimer
-            </button>
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#editer" aria-expanded="false" aria-controls="collapseExample">
-                editer
-            </button>
-        </p>
-        <div class="collapse" id="lister">
-            <div class="card card-body">
-                <h1>LISTE SECRETAIRES</h1>
-            </div>
-        </div>
-        <div class="collapse" id="ajouter">
-            <div class="card card-body">
-                <h1>Ajouter un secretaire</h1>
-                <form action="">
-                    <div class="form-group">
-                        <?php
-                            echo $form->label("nom", "Nom :");
-                            echo $form->input("text", "nom");
-                        ?>
-                    </div>
-                    <div class="form-group">
-                        <?php
-                            echo $form->label("prenom", "Prenom :");
-                            echo $form->input("text", "prenom");
-                        ?>
-                    </div>
-                    <div class="form-group">
-                        <?php
-                            echo $form->label("email", "Adresse mail :");
-                            echo $form->input("email", "adresse mail");
-                        ?>
-                    </div>
-                    <div class="form-group">
-                        <?php
-                            echo $form->label("Service", "Service :");
-                        ?>
-                        <select class="custom-select" name="role">
-                            <option selected>Selectionner le service du secretaire</option>
-                                <?php
-                                    for ($i=0; $i < sizeof($tableService); $i++) { 
-                                        echo $form->option(($tableService[$i]));
-                                    }
-                                ?>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <?php
-                            echo $form->label($pass, "Mot de passe :");
-                            echo $form->input($pass, "Mot de passe");
-                        ?>
-                    </div>
-                    <div class="form-group">
-                        <?php
-                            echo $form->label($pass, "Mot de passe :");
-                            echo $form->input($pass, "Confirmation du mot de passe");
-                        ?>
-                    </div>
-
-                    <?php
-                        echo $form->submit("valider");
-                    ?>
-
-                </form>
-                
-            </div>
-        </div>
-        <div class="collapse" id="supprimer">
-            <div class="card card-body">
-                <h1>SUPPRIMER SECRETAIRES</h1>
-            </div>
-        </div>
-        <div class="collapse" id="editer">
-            <div class="card card-body">
-                <h1>MODIFIER INFORMATIONS DES SECRETAIRES</h1>
-            </div>
-        </div>
+    <div class="bottom">
     </div>
 </div>
