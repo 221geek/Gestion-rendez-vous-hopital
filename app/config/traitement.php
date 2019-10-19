@@ -42,6 +42,6 @@
             }
         }
         else{
-            /*  */
+            header("Location: ../../");
         }
     }
