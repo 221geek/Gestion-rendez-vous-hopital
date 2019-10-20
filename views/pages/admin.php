@@ -8,8 +8,8 @@
 
     $title = "Tableau de bord";
     $style = "views/css/dashbord.css";
-    $form = new Form();
-    $pass = "password";
+    $firstname = "prenom";
+    $lastname = "nom";
 
     $bd = Database::getPDO();
 
@@ -23,7 +23,7 @@
     
 ?>
 <div class="head">
-    <div class="container">
+    <div class="container-fluid">
         <p>Bonjour <?php echo $firstname .' '.$lastname; ?></p>
         <a href="#">Deconnexion</a>
     </div>
@@ -42,16 +42,20 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
 
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="#">Tableau de bord</a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Rendez-vous</a>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Secretaires</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Messagerie</a>
+                    <a class="nav-link" href="#">Medecins</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Administrateur</a>
                 </li>
 
                 <li class="nav-item">
@@ -63,29 +67,42 @@
     </div>
 </nav>
 
-<div class="content container">
-    <div class="blocs">
-        <div class="flotte">
-            <em class="fa fa-calendar-alt"></em>
-            <div class="right">
-                <p></p>
-                <button>Cliquer ici</button>
+<div class="container-fluid">
+    <div class="crud">
+        <div class="entete">
+            <h3>Secretaires</h3>
+            <div>
+                <button class="btn btn-danger"><em class="fa fa-user-minus"></em> Supprimer</button>
+                <button class="btn btn-success"><em class="fa fa-user-plus"></em> Ajouter un Secretaire</button>
             </div>
         </div>
-        <a href="#">
-        <div class="flotte">
-            <em class="fa fa-envelope"></em>
-            <h2>Secretaire</h2>
-        </div>
-        </a>
-        <div class="flotte">
-            <em class="fa fa-user"></em>
-            <div class="right">
-                <p>Medecins</p>
-                <button>Cliquer ici</button>
-            </div>
-        </div>
-    </div>
-    <div class="bottom">
+        <table class="table" aria-describedby="crud ">
+                <thead>
+                  <tr>
+                    <th scope="col">
+                        <input type="checkbox">
+                    </th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Prenom</th>
+                    <th scope="col">Adresse mail</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">
+                        <input type="checkbox">
+                    </th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>
+                        <em class="fa fa-edit"></em>
+                        <em class="fa fa-trash-alt"></em>
+                    </td>
+                  </tr>
+                  <tr>
+                </tbody>
+              </table>
     </div>
 </div>

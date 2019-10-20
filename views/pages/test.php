@@ -14,4 +14,4 @@
     ]);
     
     $manager = new SecretaireManager();
-    $manager->update($s);
+    $manager->add($s);

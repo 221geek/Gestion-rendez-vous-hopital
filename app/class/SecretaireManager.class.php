@@ -14,6 +14,7 @@
             $req->execute();
 
             $objet->setId();
+            
             $sql2 = "INSERT INTO secretaires(id, id_services) VALUES(:id, :services)";
             $req2 = $pdo->prepare($sql2);
             $req2->bindValue(':id', $objet->getId());
