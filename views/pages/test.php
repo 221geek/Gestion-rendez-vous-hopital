@@ -1,17 +1,13 @@
 <?php
 
     $title = "tests";
-    require "../app/class/Secretaire.class.php";
-    require "../app/class/SecretaireManager.class.php";
 
-    $s = new Secretaire();
+    $table = array();
+    $bdd = Database::getPDO();
 
-    $s->hydrate([
-        "nom" => "dioppp",
-        "prenom" => "ndoumbe",
-        "mail" => "draggon@denerys.com",
-        "pass" => "nohiusikkm"
-    ]);
-    
-    $manager = new SecretaireManager();
-    $manager->add($s);
+    $req = $bdd->query("SELECT * FROM users");
+
+    while ($donnees = $req->fetch()) {
+        $table[] = $donnees;
+    }
+    var_dump($table[2]);

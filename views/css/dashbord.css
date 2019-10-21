@@ -124,7 +124,6 @@
 .entete{
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    background-color: green;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -133,6 +132,16 @@
 }
 table{
     overflow-x: auto;
+}
+table thead{
+    color: green;
+    font-weight: bold;
+    font-size: 1.2em;
+    background-color: #586069;
+}
+table button{
+    background-color: transparent;
+    border: none;
 }
 table .fa{
     font-size: 1.5em;
@@ -144,6 +153,7 @@ table .fa{
 .fa-trash-alt{
     color: red;
 }
-table input[type="checkbox"]{
-    font-size: 2em;
+table .checkbox{
+    width: 25px;
+    height: 25px;
 }
