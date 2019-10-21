@@ -3,9 +3,12 @@
     background-color: green;
     color: #fff;
 }
-.head .container{
+.head .container-fluid{
     display: flex;
     justify-content: space-between;
+}
+.head a{
+    color: #fff;
 }
 
 .navbar-expand-lg{
@@ -24,6 +27,10 @@
 .navbar-collapse li.active a, .navbar-collapse li a:hover{
     color: #000;
     border-bottom: 2px solid green;
+}
+.navbar-collapse .nav-link button{
+    background-color: transparent;
+    border: none;
 }
 .navbar-toggler{
     background-color: green;

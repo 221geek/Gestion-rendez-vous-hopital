@@ -5,9 +5,11 @@
     $table = array();
     $bdd = Database::getPDO();
 
-    $req = $bdd->query("SELECT * FROM users");
+    require "../app/class/Medecin.class.php";
+    require "../app/class/MedecinManager.class.php";
 
-    while ($donnees = $req->fetch()) {
-        $table[] = $donnees;
-    }
-    var_dump($table[2]);
+    $s = new Medecin();
+
+    $s->hydrate(array[
+        
+    ]);
