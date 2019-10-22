@@ -14,7 +14,7 @@
         }
 
         public function submit($name, $class){
-            return '<button type="submit" class="'.$class.'" id="submit-btn" name="submit">'.$name.'</button>';
+            return '<button type="submit" class="'.$class.'" id="submit-btn" name="'.$class.'">'.$name.'</button>';
         }
 
         public function messageErreur($name){

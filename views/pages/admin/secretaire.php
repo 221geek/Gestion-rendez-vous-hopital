@@ -1,7 +1,5 @@
 <?php
 
-
-
 $table = array();
 $ServiceSecretaire = array();
 
@@ -17,8 +15,6 @@ $req = $bd->query("SELECT * FROM users WHERE id_role=2");
     }
 
 ?>
-
-
 
 <div class="container-fluid">
     <div class="crud">
@@ -53,11 +49,10 @@ $req = $bd->query("SELECT * FROM users WHERE id_role=2");
                         <td><?php echo $table[$i]->{'mail'} ?></td>
                         <td><?php echo $ServiceSecretaire[$i]->{'service'}; ?></td>
                         <td>
-                            <button><em class="fa fa-edit"></em></button>
-                            <button type="button" data-toggle="modal" data-target="#confirmationSup"><em class="fa fa-trash-alt"></em></button>
+                            <a><em class="fa fa-edit"></em></a>
+                            <a data-id="<?php echo $table[$i]->{'mail'} ?>" class="openConfirm" href="" data-toggle="modal" data-target="#confirmationSup"><em class="fa fa-trash-alt"></em></a>
                         </td>
                     </tr>
-                    <tr>
                     <?php } ?>
                 </tbody>
         </table>
@@ -76,11 +71,14 @@ $req = $bd->query("SELECT * FROM users WHERE id_role=2");
         </button>
       </div>
       <div class="modal-body">
+        <form method="POST" action="app/config/actionAdmin.php">
+          <input type="hidden" name="mail" value="" id="confirm">
         Voulez-vous vraiment supprimer <?php echo "" ?> ?
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">non</button>
-        <button type="button" class="btn btn-primary">Je confirme</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">non</button>
+          <button name="essai" type="submit" class="btn btn-primary">Je confirme</button>
+        </form>
       </div>
     </div>
   </div>
@@ -96,7 +94,7 @@ $req = $bd->query("SELECT * FROM users WHERE id_role=2");
         </button>
       </div>
       <div class="modal-body">
-        <form method="POST" action="app/config/traitement.php">
+        <form method="POST" action="app/config/actionAdmin.php">
           <div class="form-group">
             <label for="lastname" class="col-form-label">Nom:</label>
             <input type="text" name="lastname" class="form-control" id="lastname">
@@ -122,7 +120,7 @@ $req = $bd->query("SELECT * FROM users WHERE id_role=2");
               <select class="form-control" name="service" name="service" id="service">
                   <?php
                     for ($i=0; $i < sizeof($tableService); $i++) { 
-                        echo "<option value=".$tableService[$i].">".$tableService[$i]."</option>";
+                        echo "<option value=".$tableService[$i]->{'id'}.">".$tableService[$i]->{'service'}."</option>";
                     }
                   ?>
               </select>
@@ -135,7 +133,4 @@ $req = $bd->query("SELECT * FROM users WHERE id_role=2");
       </div>
     </div>
   </div>
-<?php
-
-?>
 </div>

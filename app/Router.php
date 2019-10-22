@@ -9,6 +9,11 @@
         break;
 
         case "/hopital/admin":
+        case "/hopital/admin?include=dashboard":
+        case "/hopital/admin?include=admin":
+        case "/hopital/admin?include=secretaire":
+        case "/hopital/admin?include=medecin":
+        case "/hopital/admin?include=profil":
             $controller->admin();
         break;
 

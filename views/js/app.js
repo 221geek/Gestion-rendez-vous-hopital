@@ -44,3 +44,8 @@ function traitementJS(f){
         }
     } */
 }
+
+$(document).on("click", ".openConfirm", function () {
+    var value = $(this).data('id');
+    $(".modal-body #confirm").val(value);
+});

@@ -1,13 +1,10 @@
 <?php
 
 require "../class/database.class.php";
-require "../class/Secretaire.class.php";
-require "../class/SecretaireManager.class.php";
 
-    if (isset($_POST['submit'])) {
+    if (isset($_POST['login'])) {
         if (!empty($_POST['email']) && !empty($_POST['password'])) {
             require "../class/verification.class.php";
-            require "../class/database.class.php";
             
             $verification = new Verifie();
             $bdd = Database::getPDO();
@@ -48,24 +45,5 @@ require "../class/SecretaireManager.class.php";
         }
         else{
             header("Location: ../../");
-        }
-    }
-
-
-    if (isset($_POST['ajouter'])) {
-        if (!empty($_POST['lastname']) && !empty($_POST['firstname']) && !empty($_POST['email']) && !empty($_POST['psw']) && !empty($_POST['psw2']) && !empty($_POST['service'])) {
-          if ($_POST['psw'] == $_POST['psw2']) {
-
-$secretaire = new Secretaire();
-$manager = new SecretaireManager();
-              $secretaire->hydrate([
-              "nom" => $_POST['lastname'],
-              "prenom" => $_POST['firstname'],
-              "mail" => $_POST['email'],
-              "pass" => $_POST['psw']
-            ]);
-  
-            $manager->add($secretaire);
-          }
         }
     }

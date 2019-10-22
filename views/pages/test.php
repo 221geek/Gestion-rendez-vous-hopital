@@ -1,15 +1,5 @@
-<?php
-
-    $title = "tests";
-
-    $table = array();
-    $bdd = Database::getPDO();
-
-    require "../app/class/Medecin.class.php";
-    require "../app/class/MedecinManager.class.php";
-
-    $s = new Medecin();
-
-    $s->hydrate(array[
-        
-    ]);
+<pre>
+    <?php
+        var_dump($_SERVER);
+    ?>
+</pre>

@@ -7,7 +7,7 @@
         private $_prenom;
         private $_mail;
         private $_pass;
-        private $_service = 2;
+        private $_service;
         private $_id_role = 2;
 
         /* GUETTERS */
