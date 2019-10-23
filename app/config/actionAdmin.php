@@ -19,8 +19,6 @@ if (isset($_POST['addsecretaire'])) {
               "service" => $_POST['service']
           ]);
           $manager->add($secretaire);
-
-          header("Location: ../../admin?include=secretaire");
         }
     }
 }
@@ -29,9 +27,20 @@ if (isset($_POST['deletesecretaire'])) {
 
     $secretaire->setMail($_POST['mail']);
     $manager->delete($secretaire);
-    header("Location: ../../admin?include=secretaire");
 }
 
-if (condition) {
-  # code...
+if (isset($_POST['editSec'])) {
+    if (isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['email']) && isset($_POST['psw']) && isset($_POST['psw2']) && isset($_POST['service'])) {
+        $secretaire->hydrate([
+            "nom" => $_POST['lastname'],
+            "prenom" => $_POST['firstname'],
+            "mail" => $_POST['email'],
+            'pass' => $_POST['psw'],
+            "service" => $_POST['service']
+        ]);
+
+        $manager->update($secretaire);
+    }
 }
+
+header("Location: ../../admin?include=secretaire");

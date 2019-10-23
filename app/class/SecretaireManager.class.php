@@ -28,12 +28,12 @@
             
             $req = $pdo->prepare("UPDATE users SET nom = :nom, prenom = :prenom, mail = :mail, pass = :pass, id_role = :id_role WHERE id = :id");
 
-            $req->bindValue(':id', $objet->getId());
             $req->bindValue(':nom', $objet->getNom());
             $req->bindValue(':prenom', $objet->getPrenom());
             $req->bindValue(':mail', $objet->getMail());
             $req->bindValue(':pass', $objet->getPass());
             $req->bindValue(':id_role', $objet->getId_Role());
+            $req->bindValue(':id', $objet->getId());
 
             $req->execute();
 
