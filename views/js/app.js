@@ -46,6 +46,8 @@ function traitementJS(f){
 }
 
 $(document).on("click", ".openConfirm", function () {
-    var value = $(this).data('id');
+    var value = $(this).data('email');
+    var name = $(this).data("name");
     $(".modal-body #confirm").val(value);
+    document.getElementById('text').innerHTML += name;
 });

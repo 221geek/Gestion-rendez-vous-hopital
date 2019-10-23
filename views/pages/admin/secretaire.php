@@ -49,8 +49,8 @@ $req = $bd->query("SELECT * FROM users WHERE id_role=2");
                         <td><?php echo $table[$i]->{'mail'} ?></td>
                         <td><?php echo $ServiceSecretaire[$i]->{'service'}; ?></td>
                         <td>
-                            <a><em class="fa fa-edit"></em></a>
-                            <a data-id="<?php echo $table[$i]->{'mail'} ?>" class="openConfirm" href="" data-toggle="modal" data-target="#confirmationSup"><em class="fa fa-trash-alt"></em></a>
+                            <a data-=""><em class="fa fa-edit"></em></a>
+                            <a data-name="<?php echo $table[$i]->{'prenom'}; ?>" data-email="<?php echo $table[$i]->{'mail'} ?>" class="openConfirm" href="" data-toggle="modal" data-target="#confirmationSup"><em class="fa fa-trash-alt"></em></a>
                         </td>
                     </tr>
                     <?php } ?>
@@ -73,11 +73,11 @@ $req = $bd->query("SELECT * FROM users WHERE id_role=2");
       <div class="modal-body">
         <form method="POST" action="app/config/actionAdmin.php">
           <input type="hidden" name="mail" value="" id="confirm">
-        Voulez-vous vraiment supprimer <?php echo "" ?> ?
+          Voulez-vous vraiment supprimer <span id="text"></span> ?
       </div>
       <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">non</button>
-          <button name="essai" type="submit" class="btn btn-primary">Je confirme</button>
+          <button name="deletesecretaire" type="submit" class="btn btn-primary">Je confirme</button>
         </form>
       </div>
     </div>
@@ -127,7 +127,7 @@ $req = $bd->query("SELECT * FROM users WHERE id_role=2");
           </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                <button type="submit" name="ajouter" class="btn btn-primary">Ajouter</button>
+                <button type="submit" name="addsecretaire" class="btn btn-primary">Ajouter</button>
             </div>
         </form>
       </div>
