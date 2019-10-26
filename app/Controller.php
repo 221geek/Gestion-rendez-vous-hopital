@@ -11,6 +11,9 @@
         public function secretaire(){
             afficher("secretaire");
         }
+        public function medecin(){
+            afficher("medecin");
+        }
         public function error(){
             afficher("erreur");
         }

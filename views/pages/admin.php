@@ -1,31 +1,39 @@
-<?php /* 
+<?php 
     session_start();
 
     if (!isset($_SESSION['id'])) {
-        header('Location: ./');
+        header('Location: ./index?error=Veillez d\'abord vous connecter');
         exit;
-    } */
-
+    }
+    if ($_SESSION['role'] != 1) {
+      header("Location: ./");
+    }
 
     $title = "Tableau de bord";
     $style = "views/css/dashbord.css";
-    $firstname = "prenom";
-    $lastname = "nom";
 
     $tableService = array();
+    $tableSpe = array();
     
     $bd = Database::getPDO();
     
-    $statement = $bd->query("SELECT * FROM services");
+    $statement1 = $bd->query("SELECT * FROM services");
 
-    while($donnees = $statement->fetch()){
+    while($donnees = $statement1->fetch()){
         $tableService[] = $donnees;
     }
+
+    $statement2 = $bd->query("SELECT * FROM specialites");
+
+    while($donnees = $statement2->fetch()){
+      $tableSpe[] = $donnees;
+    }
+
 ?>
 <div class="head">
     <div class="container-fluid">
-        <p>Bonjour <?php echo $firstname .' '.$lastname; ?></p>
-        <a href="#">Deconnexion</a>
+        <p>Bonjour</p>
+        <a href="app/config/deconnexion.php">Deconnexion</a>
     </div>
 </div>
 

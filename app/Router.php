@@ -5,20 +5,21 @@
     switch ($url){
 
         case "/hopital/":
+        case (stripos($url, "/hopital/index?error")):
             $controller->index();
         break;
 
         case "/hopital/admin":
-        case "/hopital/admin?include=dashboard":
-        case "/hopital/admin?include=admin":
-        case "/hopital/admin?include=secretaire":
-        case "/hopital/admin?include=medecin":
-        case "/hopital/admin?include=profil":
+        case (stripos($url, '/hopital/admin?')):
             $controller->admin();
         break;
 
         case "/hopital/secretaire":
             $controller->secretaire();
+        break;
+
+        case "/hopital/medecin":
+            $controller->medecin();
         break;
 
         case "/hopital/test":

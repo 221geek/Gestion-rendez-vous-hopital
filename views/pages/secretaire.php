@@ -1,14 +1,25 @@
 <?php
+    session_start();
+
+    if (!isset($_SESSION['id'])) {
+        header('Location: ./index?error=Veillez d\'abord vous connecter');
+        exit;
+    }
+    if ($_SESSION['role'] != 2) {
+      header("Location: ./");
+    }
+
     $title = "Dashbord";
     $style = "views/css/dashbord.css";
 
-    $firstname = "Abdoul aziz";
-    $lastname = "dione";
+
+    $firstname = $_SESSION['prenom'];
+    $lastname = $_SESSION['nom'];
 ?>
 <div class="head">
-    <div class="container">
-        <p>Bonjour <?php echo $firstname .' '.$lastname; ?></p>
-        <a href="#">Deconnexion</a>
+    <div class="container-fluid">
+        <p>Bonjour <?php echo $firstname .' '.$lastname; ?> </p>
+        <a href="app/config/deconnexion.php">Deconnexion</a>
     </div>
 </div>
 

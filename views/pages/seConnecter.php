@@ -1,21 +1,36 @@
 <?php
-	$title = "dalal diamm : connexion";
+	session_start();
+
+
+	$title = "HDJ : connexion";
 	$style = "views/css/connexion.css";
 	
 	$form = new Form();
 	$email = "email";
 	$passw = "password";
 	$role = "role";
-/* 
-	$bd = Database::getPDO();
 
-    $statement = $bd->query("SELECT role FROM role");
-    $roles = $statement->fetchAll(PDO::FETCH_ASSOC);
+    if (isset($_SESSION['id'])) {
+		
+		switch($_SESSION['role']){
 
-    foreach ($roles as $key){
-        $tablerole[] = implode(', ', array_values($key));
+			case 1:
+				header('Location: admin');
+			break;
+			
+			case 2:
+				header("Location: secretaire");
+			break;
+
+			case 3 :
+				header("Location: medecin");
+			break;
+			
+			default :
+				header("Location: .");			
+		}
+        exit;
     }
-    sort($tablerole); */
 ?>
 <h2>Espace de connexion Dalal Diamm</h2>
 
@@ -24,12 +39,19 @@
   <div class="form">
     <form method="POST" action="app/config/traitement.php">
 	  <h1>Connexion</h1>
-	 <?php
-	 	echo $form->input($email, "email", "user");
-	 	echo $form->input($passw, "mot_de_passe", "pass");
-	 	echo $form->submit("SE CONNECTER", "login");
-	 ?>
-    
+		<?php
+			echo $form->input($email, "email", "user");
+			echo $form->input($passw, "mot_de_passe", "pass");
+			echo $form->submit("SE CONNECTER", "login");
+		?>
     </form>
   </div>  
 </div>
+<?php
+	if (isset($_REQUEST['error'])) {
+		$error = $_REQUEST['error'];
+?>
+	<div class="alert alert-danger" role="alert">
+		<?php echo $error; ?>
+	</div>
+<?php } ?>

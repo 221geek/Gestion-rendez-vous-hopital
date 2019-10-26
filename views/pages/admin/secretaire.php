@@ -21,14 +21,14 @@ $req = $bd->query("SELECT * FROM users WHERE id_role=2");
         <div class="entete bg-dark">
             <h3>Secretaires</h3>
             <div>
-                <button class="btn btn-danger"><em class="fa fa-user-minus"></em> Supprimer</button>
+                <button class="btn btn-danger" onclick="deleteCheck('supp[]');" data-toggle="modal" data-target="#confirmCheckbox"><em class="fa fa-user-minus"></em> Supprimer</button>
                 <button class="btn btn-success" data-toggle="modal" data-target="#ajouter"><em class="fa fa-user-plus"></em> Ajouter un Secretaire</button>
             </div>
         </div>
         <table class="table table-dark" aria-describedby="crud">
             <thead>
                 <tr>
-                    <th scope="col"><input name="all" onclick="" class="" type="checkbox"></th>
+                    <th scope="col"><input name="all" onclick="checkAllBox(this, 'supp[]');" class="" type="checkbox"></th>
                     <th scope="col">Nom</th>
                     <th scope="col">Prenom</th>
                     <th scope="col">Adresse mail</th>
@@ -41,7 +41,7 @@ $req = $bd->query("SELECT * FROM users WHERE id_role=2");
                     <?php for ($i=0; $i < sizeof($table); $i++) { ?>
                     <tr>
                         <th scope="row">
-                            <input name="supp[]" value="<?php echo $i; ?>" class="" type="checkbox">
+                            <input data-name="<?php echo $table[$i]->{'prenom'}; ?>" name="supp[]" value="<?php echo $table[$i]->{'mail'}; ?>" class="" type="checkbox" id="checkbox">
                         </th>
                         <td><?php echo $table[$i]->{'nom'} ?></td>
                         <td><?php echo $table[$i]->{'prenom'} ?></td>
@@ -60,6 +60,7 @@ $req = $bd->query("SELECT * FROM users WHERE id_role=2");
 </div>
 
 <!-- MODAL -->
+
 <!-- modal pour confirmer la suppression -->
 <div class="modal fade" id="confirmationSup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -180,8 +181,31 @@ $req = $bd->query("SELECT * FROM users WHERE id_role=2");
           </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                <button type="submit" name="editSec" class="btn btn-primary">Ajouter</button>
+                <button type="submit" name="editSec" class="btn btn-primary">Modifier</button>
             </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="confirmCheckbox" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="app/config/actionAdmin.php">
+          <input type="hidden" name="check" value="" id="check">
+          Voulez-vous vraiment supprimer ces secretaires : <span id="text1"></span> ?
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">non</button>
+          <button name="deletesecretairecheckbox" type="submit" class="btn btn-primary">Je confirme</button>
         </form>
       </div>
     </div>

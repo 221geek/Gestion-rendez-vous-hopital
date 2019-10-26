@@ -20,12 +20,26 @@ require "../class/database.class.php";
             $result = $requete->fetch();
 
             if (!$result) {
-                header("Location: ../../");
+                $req = $bdd->prepare("SELECT * FROM users WHERE mail = :mail");
+                $req->execute(array(
+                    'mail' => $email
+                ));
+                $mailExixst = $req->fetch();
+                if (!$mailExixst) {
+                    header("Location: ../../index?error=Adresse mail incorrect");
+                }
+                else {
+                    header("Location: ../../index?error=Mot de passe incorrect");
+                }
             }
 
             else{
                 session_start();
                 $_SESSION['id'] = $result->{'id'};
+                $_SESSION['nom'] = $result->{'nom'};
+                $_SESSION['prenom'] = $result->{'prenom'};
+                $_SESSION['mail'] = $result->{'mail'};
+                $_SESSION['role'] = $result->{'id_role'};
 
                 $role = $result->{'id_role'};
                 switch ($role) {
@@ -44,6 +58,9 @@ require "../class/database.class.php";
             }
         }
         else{
-            header("Location: ../../");
+            header("Location: ../../index?error=Veillez remplir tout les champs");
         }
+    }
+    else{
+        header("Location: ../../");
     }

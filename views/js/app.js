@@ -12,7 +12,6 @@ $(document).ready(function(){
 
 function traitementJS(f){
 
-
     /* 
     var email = document.getElementById("email").value, password = document.getElementById("password").value, erreurMail = document.getElementById("emailHelp"), erreurPassword = document.getElementById("passwordHelp"), inputEmail = document.getElementById("email"), inputPassword = document.getElementById("password");
 
@@ -49,14 +48,39 @@ $(document).on("click", ".openConfirm", function () {
     var value = $(this).data('email');
     name = $(this).data("name");
     $(".modal-body #confirm").val(value);
-    document.getElementById('text').innerHTML += name;
+    document.getElementById('text').innerHTML = name;
 });
 
 $(document).on("click", ".openEdit", function () {
-    var nom = $(this).data('nom'), prenom = $(this).data('prenom'), mail = $(this).data('mail'), pass = $(this).data('pass'), service = $(this).data('service');
+    var nom = $(this).data('nom'), prenom = $(this).data('prenom'), mail = $(this).data('mail'), pass = $(this).data('pass'), service = $(this).data('service'), specialite = $(this).data('specialite');
     $(".modal-body #lastname").val(nom);
     $(".modal-body #firstname").val(prenom);
     $(".modal-body #email").val(mail);
     $(".modal-body #password").val(pass);
     $(".modal-body #service").val(service);
+    $(".modal-body #specialite").val(specialite);
 });
+
+function checkAllBox(ref, name){
+    var elements = document.getElementsByTagName('input');
+
+    for (var i = 0; i < elements.length; i++) {
+        if (elements[i].type == 'checkbox' && elements[i].name == name) {
+			elements[i].checked = ref.checked;
+		}
+    }
+}
+
+function deleteCheck(name){
+    var elements = document.getElementsByTagName('input');
+    var myArray = new Array();
+
+    for (var i = 0; i < elements.length; i++) {
+        if (elements[i].type == 'checkbox' && elements[i].name == name) {
+			if(elements[i].checked == true){
+                myArray.push(elements[i].value);
+                $(".modal-body #check").val(myArray);
+            }
+		}
+    }
+}
