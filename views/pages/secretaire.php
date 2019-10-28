@@ -10,7 +10,8 @@
     }
 
     $title = "Dashbord";
-    $style = "views/css/dashbord.css";
+    $style = "views/css/nav.css";
+    $style1 = "views/css/fullcalendar.css";
 
 
     $firstname = $_SESSION['prenom'];
@@ -37,11 +38,11 @@
             <ul class="navbar-nav ml-auto">
 
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Tableau de bord</a>
+                    <a class="nav-link" href="secretaire?include=dashboard">Tableau de bord</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Rendez-vous</a>
+                    <a class="nav-link" href="secretaire?include=rendezvous">Rendez-vous</a>
                 </li>
 
                 <li class="nav-item">
@@ -57,39 +58,22 @@
     </div>
 </nav>
 
-<div class="content container">
-    <div class="blocs">
-        <div class="flotte">
-            <em class="fa fa-calendar-alt"></em>
-            <div class="right">
-                <p>Rechercher ou annuler un Rendez-vous</p>
-                <button>Cliquer ici</button>
-            </div>
-        </div>
-        <div class="flotte">
-            <em class="fa fa-envelope"></em>
-            <div class="right">
-                <p>Rechercher ou annuler un Rendez-vous</p>
-                <button>Cliquer ici</button>
-            </div>
-        </div>
-        <div class="flotte">
-            <em class="fa fa-user"></em>
-            <div class="right">
-                <p>Mon profil</p>
-                <button>Cliquer ici</button>
-            </div>
-        </div>
-    </div>
-    <div class="bottom">
-        <div class="rv">
-            <h3>Prendre un Rendez-vous</h3>
-            <em class="fa fa-calendar-alt"></em>
-            <button>Cliquer ici</button>
-        </div>
-        <div class="prochain">
-            <h3>Rendez-vous a venir</h3>
-            <!-- LISTE DE 5 A 10 PROCHAIN RV A VENIR -->
-        </div>
-    </div>
-</div>
+
+
+<?php
+if (isseT($_REQUEST['include'])) {
+
+    $include = $_REQUEST['include'];
+
+    if ($include == "dashboard" || $include == "") {
+        include("secretaire/dashboard.php");
+    }
+    if ($include == "rendezvous") {
+        include("secretaire/rendezvous.php");
+    }
+}
+else{
+    include("secretaire/dashboard.php");
+}
+
+?>

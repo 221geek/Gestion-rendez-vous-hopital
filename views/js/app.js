@@ -9,41 +9,6 @@ $(document).ready(function(){
     });
 })
 
-
-function traitementJS(f){
-
-    /* 
-    var email = document.getElementById("email").value, password = document.getElementById("password").value, erreurMail = document.getElementById("emailHelp"), erreurPassword = document.getElementById("passwordHelp"), inputEmail = document.getElementById("email"), inputPassword = document.getElementById("password");
-
-    if(email === ""){
-        erreurMail.classList.remove("hide")
-        inputEmail.classList.add("borderRed")
-        if (erreurMail.innerHTML === "") {
-            erreurMail.innerHTML += '<p>Veillez indiquer votre adresse mail svp</p>'
-        }
-    }
-    if(password === ""){
-        erreurPassword.classList.remove("hide")
-        inputPassword.classList.add("borderRed")
-        if (erreurPassword.innerHTML === ""){
-            erreurPassword.innerHTML += '<p>Veillez indiquer votre mot de passe svp</p>'
-        }
-    }
-    if (!isEmail(email)){
-        erreurMail.classList.remove("hide")
-        inputEmail.classList.add("borderRed")
-        if (erreurMail.innerHTML === "") {
-            erreurMail.innerHTML += '<p>Adresse mail incorrecte</p>'
-        }
-    }
-    if(isEmail(email)){
-        if (password === "1234") {
-            $('#submit-btn').removeAttr('type');
-            $('#submit-btn').attr('type','submit');
-        }
-    } */
-}
-
 $(document).on("click", ".openConfirm", function () {
     var value = $(this).data('email');
     name = $(this).data("name");

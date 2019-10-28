@@ -15,6 +15,7 @@
         break;
 
         case "/hopital/secretaire":
+        case (stripos($url, '/hopital/secretaire?')):
             $controller->secretaire();
         break;
 

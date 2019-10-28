@@ -6,15 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php echo $title; ?></title>
     <link rel="shortcut icon" href="views/img/logo.ico">
-    <link href='node_modules/@fullcalendar/core/main.css' rel='stylesheet' />
-    <link href='node_modules/@fullcalendar/daygrid/main.css' rel='stylesheet' />
-    <link href='node_modules/@fullcalendar/timegrid/main.css' rel='stylesheet' />
-    <link href='node_modules/@fullcalendar/list/main.css' rel='stylesheet' />
     <link rel="stylesheet" href="node_modules/fontawesome/css/all.min.css" class="rel">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" class="rel">
     <link rel="stylesheet" href="views/css/main.css" class="rel">
     <link rel="stylesheet" href="<?php echo $style; ?>" class="rel">
+    <link rel="stylesheet" href="<?php echo $style1; ?>" class="rel">
+    <link rel="stylesheet" href="<?php echo $style2; ?>" class="rel">
 
+    <script src="views/js/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="views/js/app.js"></script>
+    <script src="views/js/moment.min.js"></script>
+    <script src="views/js/fullcalendar.min.js"></script>
 </head>
 <body>
     <div class="gif">
@@ -25,8 +28,5 @@
         <?php echo $content; ?>
     </div>
 
-    <script type="text/javascript"src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="views/js/app.js"></script>
 </body>
 </html>

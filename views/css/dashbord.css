@@ -1,41 +1,4 @@
-.head{
-    height: 25px;
-    background-color: green;
-    color: #fff;
-}
-.head .container-fluid{
-    display: flex;
-    justify-content: space-between;
-}
-.head a{
-    color: #fff;
-}
 
-.navbar-expand-lg{
-    box-shadow: 0px 0px 5px rgba(192, 192, 192, 0.377);
-}
-
-.navbar-brand img{
-    width: 70px;
-}
-.navbar-collapse li a.nav-link{
-    color: silver;
-    font-weight: bold;
-    font-size: 1em;
-    margin: 0 15px;
-}
-.navbar-collapse li.active a, .navbar-collapse li a:hover{
-    color: #000;
-    border-bottom: 2px solid green;
-}
-.navbar-collapse .nav-link button{
-    background-color: transparent;
-    border: none;
-}
-.navbar-toggler{
-    background-color: green;
-    color: #fff;
-}
 .content{
     display: flex;
     flex-direction: column;
