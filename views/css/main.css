@@ -38,3 +38,8 @@ a:hover{
 	margin-left: -150px;
     margin-top: -50px;
 }
+.toasts{
+    position: absolute;
+    top: 25px;
+    left: 25px;
+}

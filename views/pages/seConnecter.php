@@ -32,6 +32,46 @@
         exit;
     }
 ?>
+<div class="toasts">
+	<div class="toast" data-autohide="false">
+		<div class="toast-header">
+			<strong class="mr-auto text-primary">Compte admin</strong>
+			<small class="text-muted"></small>
+			<button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+		</div>
+		<div class="toast-body">
+			<strong>email:</strong> admin@dalaljamm.com
+			<br>
+			<strong>password:</strong> dalaljamm
+		</div>
+	</div>
+
+	<div class="toast" data-autohide="false">
+		<div class="toast-header">
+			<strong class="mr-auto text-primary">Compte admin</strong>
+			<small class="text-muted"></small>
+			<button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+		</div>
+		<div class="toast-body">
+			<strong>email:</strong> admin@dalaljamm.com
+			<br>
+			<strong>password:</strong> dalaljamm
+		</div>
+	</div>
+
+	<div class="toast" data-autohide="false">
+		<div class="toast-header">
+			<strong class="mr-auto text-primary">Compte admin</strong>
+			<small class="text-muted"></small>
+			<button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+		</div>
+		<div class="toast-body">
+			<strong>email:</strong> admin@dalaljamm.com
+			<br>
+			<strong>password:</strong> dalaljamm
+		</div>
+	</div>
+</div>
 <h2>Espace de connexion Dalal Diamm</h2>
 
 <div class="cont">
@@ -57,3 +97,8 @@
 <?php
 	}
 ?>
+<script>
+$(document).ready(function(){
+  $('.toast').toast('show');
+});
+</script>

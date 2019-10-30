@@ -1122,3 +1122,11 @@ be a descendant of the grid when it is being dragged.
 	border-top-color: transparent;
 	border-bottom-color: transparent;
 }
+
+#calendar {
+	max-width: 800px;
+}
+.col-centered{
+	float: none;
+	margin: 0 auto;
+}

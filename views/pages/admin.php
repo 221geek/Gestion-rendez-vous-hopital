@@ -10,7 +10,8 @@
     }
 
     $title = "Tableau de bord";
-    $style = "views/css/dashbord.css";
+    $style1 = "views/css/nav.css";
+    $style2 = "views/css/dashbord.css";
 
     $tableService = array();
     $tableSpe = array();
@@ -90,8 +91,8 @@ if (isseT($_REQUEST['include'])) {
         include("admin/profil.php");
     }
 }
-  else{
+else{
     include("admin/dashboard.php");
-  }
+}
   
 ?>

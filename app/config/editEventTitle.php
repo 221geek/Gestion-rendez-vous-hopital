@@ -1,12 +1,13 @@
 <?php
 
-require_once('bdd.php');
+$bdd = new PDO('mysql:host=localhost;dbname=rendezVous;charset=utf8', 'root', 'root');
+
 if (isset($_POST['delete']) && isset($_POST['id'])){
 	
 	
 	$id = $_POST['id'];
 	
-	$sql = "DELETE FROM events WHERE id = $id";
+	$sql = "DELETE FROM rendezVous WHERE id = $id";
 	$query = $bdd->prepare( $sql );
 	if ($query == false) {
 	 print_r($bdd->errorInfo());
@@ -18,13 +19,14 @@ if (isset($_POST['delete']) && isset($_POST['id'])){
 	 die ('Erreur execute');
 	}
 	
-}elseif (isset($_POST['title']) && isset($_POST['color']) && isset($_POST['id'])){
+}elseif (isset($_POST['patient']) && isset($_POST['medecin']) && isset($_POST['color']) && isset($_POST['id'])){
 	
 	$id = $_POST['id'];
-	$title = $_POST['title'];
+	$patient = $_POST['patient'];
+	$medecin = $_POST['medecin'];
 	$color = $_POST['color'];
 	
-	$sql = "UPDATE events SET  title = '$title', color = '$color' WHERE id = $id ";
+	$sql = "UPDATE rendezVous SET  patient = '$patient', medecin = '$medecin', color = '$color' WHERE id = $id ";
 
 	
 	$query = $bdd->prepare( $sql );
@@ -39,7 +41,7 @@ if (isset($_POST['delete']) && isset($_POST['id'])){
 	}
 
 }
-header('Location: index.php');
+header('Location: ../../secretaire?include=rendezvous');
 
 	
 ?>

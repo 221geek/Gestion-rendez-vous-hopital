@@ -14,7 +14,9 @@
     <link rel="stylesheet" href="<?php echo $style2; ?>" class="rel">
 
     <script src="views/js/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/util.js"></script>
     <script src="views/js/app.js"></script>
     <script src="views/js/moment.min.js"></script>
     <script src="views/js/fullcalendar.min.js"></script>

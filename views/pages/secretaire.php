@@ -16,6 +16,10 @@
 
     $firstname = $_SESSION['prenom'];
     $lastname = $_SESSION['nom'];
+
+
+	$bdd = new PDO('mysql:host=localhost;dbname=rendezVous;charset=utf8', 'root', 'root');
+
 ?>
 <div class="head">
     <div class="container-fluid">
@@ -57,8 +61,6 @@
         </div>
     </div>
 </nav>
-
-
 
 <?php
 if (isseT($_REQUEST['include'])) {

@@ -1,20 +1,17 @@
 <?php
 
 // Connexion à la base de données
-require "../class/database.class.php";
-
-$bdd = Database::getPDO();
+$bdd = new PDO('mysql:host=localhost;dbname=rendezVous;charset=utf8', 'root', 'root');
 
 //echo $_POST['patient'];
-if (isset($_POST['patient']) && isset($_POST['date']) && isset($_POST['start']) && isset($_POST['end']) && isset($_POST['color'])){
+if (isset($_POST['patient']) && isset($_POST['medecin']) && isset($_POST['start']) && isset($_POST['color'])){
 	
 	$patient = $_POST['patient'];
-	$date = $_POST['date'];
+	$medecin = $_POST['medecin'];
 	$start = $_POST['start'];
-	$end = $_POST['end'];
 	$color = $_POST['color'];
 
-	$sql = "INSERT INTO rendezVous(patient, date, start, end, color) values ('$patient', '$date', '$start', '$end', '$color')";
+	$sql = "INSERT INTO rendezVous(patient, medecin, start, color) values ('$patient', '$medecin', '$start', '$color')";
 	//$req = $bdd->prepare($sql);
 	//$req->execute();
 	

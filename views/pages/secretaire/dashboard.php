@@ -1,8 +1,3 @@
-<?php
-
-    $style2 = "views/css/dashbord.css";
-
-?>
 
 <div class="content container">
     <div class="blocs">
