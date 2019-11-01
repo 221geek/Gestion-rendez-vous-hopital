@@ -1,6 +1,6 @@
 /* verifier une adresse mail valide avec un regex */
 function isEmail(mail){
-    var regEmail = new RegExp('^[0-9a-z._-]+@{1}[0-9a-z.-]{2,}[.]{1}[a-z]{1,5}$','i');
+    var regEmail = new RegExp('^[0-9a-z._-]+@{1}[0-9a-z.-]{2,}[.]{1}[a-z]{1,5}c$','i');
     return regEmail.test(mail);
 }
 /* cocher plusieurs checkbox a la fois */
@@ -26,6 +26,14 @@ function deleteCheck(name){
 		}
     }
 }
+
+$(document).on("click", ".editHoraire", function(){
+    var dow = $(this).data('dow'), jour = $(this).data('day'), start = $(this).data('start'), end = $(this).data('end');
+    document.getElementById('jour').innerHTML = jour;
+    $('#start').val(start);
+    $('#end').val(end);
+    $(".modal-body #hiddenInput").val(dow);
+});
 
 $(document).ready(function(){
     $(".gif").fadeOut(4000, function(){

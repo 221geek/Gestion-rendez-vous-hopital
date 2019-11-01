@@ -102,14 +102,14 @@
 	$(document).ready(function(){
 		$('.toast').toast('show');
 	});
-
+/* 
 	$('#submit-btn').hide(); 
 	$("#email").keydown(function() {
-		if(isEmail($("#email").val()) && $('#password').val().length > 2) {
+		if(isEmail($("#email").val())) {
 			$('#submit-btn').show(); 
 		}
 		else{
 			$('#submit-btn').hide();
 		}
-	});
+	}); */
 </script>

@@ -11,7 +11,9 @@
         $content;
         require_once(VIEWS . 'layout.php');
     }
-
-    require "../app/config/config.php";
+    require "../app/class/autoloader.php";
+    
+    Autoloader::register();
+    
     require "../app/Controller.php";
     require "../app/Router.php";
