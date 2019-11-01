@@ -6,7 +6,7 @@
     }
 ?>
 
-<div class="list-group">
+<div class="list-group" id="horaire">
   <a href="#" class="list-group-item list-group-item-action active">
     <h4>HORAIRES</h4>
     <?php for ($i=0; $i < sizeof($jours); $i++) { ?>
@@ -34,22 +34,22 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="POST" action="test">
+        <form method="POST" action="app/config/actionAdmin.php">
           <div class="form-group">
             <label for="start" class="col-form-label">De :</label>
-            <input type="time" class="form-control" id="start">
+            <input type="time" class="form-control" name="start" id="start">
           </div>
           <div class="form-group">
             <label for="end" class="col-form-label">a :</label>
-            <input type="time" class="form-control" id="end">
+            <input type="time" class="form-control" name="end" id="end">
           </div>
           <input type="hidden" id="hiddenInput" name="id">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-        <button type="submit" class="btn btn-primary">Valider</button>
+        <button type="submit" name="updatehoraire" class="btn btn-primary">Valider</button>
       </div>
-        </form>
+      </form>
     </div>
   </div>
 </div>

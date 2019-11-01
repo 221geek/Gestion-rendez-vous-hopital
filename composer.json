@@ -1,0 +1,8 @@
+// composer.json
+{
+    "require": {
+        "mageekguy/atoum"        : "dev-master",
+        "symfony/http-foundation": "dev-master",
+        "breerly/zf1"            : "1.11.*"
+    }
+}

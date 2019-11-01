@@ -1,10 +1,15 @@
 <?php
-    class Horaire
+    class Horaire extends Database
     {
+        private $_dow;
         private $_day;
         private $_start;
         private $_end;
 
+
+        public function setDow($dow){
+            $this->_dow = $dow;
+        }
         public function setDay($day){
             $this->_day = $day;
         }
@@ -15,11 +20,14 @@
             $this->_end = $end;
         }
 
+        public function getDow(){
+            return $this->_dow;
+        }
         public function getDay(){
             return $this->_day;
         }
         public function getStart(){
-            return $this->start;
+            return $this->_start;
         }
         public function getEnd(){
             return $this->_end;

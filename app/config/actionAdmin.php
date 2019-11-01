@@ -1,10 +1,7 @@
 <?php
 
-require "../class/database.class.php";
-require "../class/Secretaire.class.php";
-require "../class/SecretaireManager.class.php";
-require "../class/Medecin.class.php";
-require "../class/MedecinManager.class.php";
+require "../class/Autoloader.php";
+Autoloader::registerConfig();
 
 $secretaire = new Secretaire();
 $manager = new SecretaireManager();
@@ -97,5 +94,26 @@ if (isset($_POST['deletemedecincheckbox'])) {
             $medecinManager->delete($medecin);
         }
         header("Location: ../../admin?include=medecin");
+    }
+}
+
+if (isset($_POST['updatehoraire'])) {
+    if (!empty($_POST['start']) && !empty($_POST['end']) && !empty($_POST['id'])) {
+        $id = $_POST['id'];
+        $start = $_POST['start'];
+        $end = $_POST['end'];
+
+        $horaire = new Horaire();
+        $update = new HoraireUpdate();
+
+        $horaire->hydrate([
+            "dow" => $id,
+            "start" => $start,
+            "end" => $end
+        ]);
+
+        $update->update($horaire);
+
+        header("Location: ../../");
     }
 }

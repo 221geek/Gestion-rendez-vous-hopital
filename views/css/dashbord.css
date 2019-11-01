@@ -127,6 +127,13 @@ table .checkbox{
     width: 25px;
     height: 25px;
 }
+#horaire{
+    margin-top: 50px;
+}
+#horaire .active{
+    background-color: green;
+    border: none;
+}
 .list-group .list-group-item-action{
     display: flex;
     justify-content: space-between;
