@@ -10,7 +10,7 @@ require "../class/database.class.php";
             $bdd = Database::getPDO();
 
             $email = htmlspecialchars($_POST['email']);
-            $password = $_POST['password'];
+            $password = sha1($_POST['password']);
 
             $requete = $bdd->prepare('SELECT * FROM users WHERE mail = :mail AND pass = :pass');
             $requete->execute(array(

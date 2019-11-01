@@ -18,8 +18,6 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/util.js"></script>
     <script src="views/js/app.js"></script>
-    <script src="views/js/moment.min.js"></script>
-    <script src="views/js/fullcalendar.min.js"></script>
 </head>
 <body>
     <div class="gif">

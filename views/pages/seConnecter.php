@@ -1,7 +1,6 @@
 <?php
 	session_start();
 
-
 	$title = "HDJ : connexion";
 	$style = "views/css/connexion.css";
 	
@@ -42,11 +41,11 @@
 		<div class="toast-body">
 			<strong>email:</strong> admin@dalaljamm.com
 			<br>
-			<strong>password:</strong> dalaljamm
+			<strong>password:</strong> admin
 		</div>
 	</div>
 
-	<div class="toast" data-autohide="false">
+	<!-- <div class="toast" data-autohide="false">
 		<div class="toast-header">
 			<strong class="mr-auto text-primary">Compte admin</strong>
 			<small class="text-muted"></small>
@@ -70,7 +69,7 @@
 			<br>
 			<strong>password:</strong> dalaljamm
 		</div>
-	</div>
+	</div> -->
 </div>
 <h2>Espace de connexion Dalal Diamm</h2>
 
@@ -81,6 +80,8 @@
 	  <h1>Connexion</h1>
 		<?php
 			echo $form->input($email, "email", "user");
+		?>
+		<?php
 			echo $form->input($passw, "mot_de_passe", "pass");
 			echo $form->submit("SE CONNECTER", "login");
 		?>
@@ -98,7 +99,17 @@
 	}
 ?>
 <script>
-$(document).ready(function(){
-  $('.toast').toast('show');
-});
+	$(document).ready(function(){
+		$('.toast').toast('show');
+	});
+
+	$('#submit-btn').hide(); 
+	$("#email").keydown(function() {
+		if(isEmail($("#email").val()) && $('#password').val().length > 2) {
+			$('#submit-btn').show(); 
+		}
+		else{
+			$('#submit-btn').hide();
+		}
+	});
 </script>

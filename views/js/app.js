@@ -1,6 +1,30 @@
+/* verifier une adresse mail valide avec un regex */
 function isEmail(mail){
-    var regEmail = new RegExp('^[0-9a-z._-]+@{1}[0-9a-z.-]{2,}[.]{1}[a-z]{2,5}$','i');
+    var regEmail = new RegExp('^[0-9a-z._-]+@{1}[0-9a-z.-]{2,}[.]{1}[a-z]{1,5}$','i');
     return regEmail.test(mail);
+}
+/* cocher plusieurs checkbox a la fois */
+function checkAllBox(ref, name){
+    var elements = document.getElementsByTagName('input');
+
+    for (var i = 0; i < elements.length; i++) {
+        if (elements[i].type == 'checkbox' && elements[i].name == name) {
+			elements[i].checked = ref.checked;
+		}
+    }
+}
+function deleteCheck(name){
+    var elements = document.getElementsByTagName('input');
+    var myArray = new Array();
+
+    for (var i = 0; i < elements.length; i++) {
+        if (elements[i].type == 'checkbox' && elements[i].name == name) {
+			if(elements[i].checked == true){
+                myArray.push(elements[i].value);
+                $(".modal-body #check").val(myArray);
+            }
+		}
+    }
 }
 
 $(document).ready(function(){
@@ -26,26 +50,3 @@ $(document).on("click", ".openEdit", function () {
     $(".modal-body #specialite").val(specialite);
 });
 
-function checkAllBox(ref, name){
-    var elements = document.getElementsByTagName('input');
-
-    for (var i = 0; i < elements.length; i++) {
-        if (elements[i].type == 'checkbox' && elements[i].name == name) {
-			elements[i].checked = ref.checked;
-		}
-    }
-}
-
-function deleteCheck(name){
-    var elements = document.getElementsByTagName('input');
-    var myArray = new Array();
-
-    for (var i = 0; i < elements.length; i++) {
-        if (elements[i].type == 'checkbox' && elements[i].name == name) {
-			if(elements[i].checked == true){
-                myArray.push(elements[i].value);
-                $(".modal-body #check").val(myArray);
-            }
-		}
-    }
-}

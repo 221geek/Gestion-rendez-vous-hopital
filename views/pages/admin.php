@@ -62,37 +62,32 @@
             <li class="navbar-item">
               <a href="admin?include=admin" class="nav-link">Administrateur</a>
             </li>
-            <li class="navbar-item">
-              <a href="admin?include=profil" class="nav-link">Mon profil</a>
-            </li>
           </ul>
         </div>
     </div>
 </nav>
+<div class="container">
+  <?php
+  if (isseT($_REQUEST['include'])) {
 
-<?php
-if (isseT($_REQUEST['include'])) {
+      $include = $_REQUEST['include'];
 
-    $include = $_REQUEST['include'];
-
-    if ($include == "dashboard" || $include == "") {
-        include("admin/dashboard.php");
-    }
-    if ($include == "secretaire") {
-        include("admin/secretaire.php");
-    }
-    if ($include == "medecin") {
-        include("admin/medecin.php");
-    }
-    if ($include == "admin") {
-        include("admin/adminlist.php");
-    }
-    if ($include == "profil") {
-        include("admin/profil.php");
-    }
-}
-else{
-    include("admin/dashboard.php");
-}
-  
-?>
+      if ($include == "dashboard" || $include == "") {
+          include("admin/dashboard.php");
+      }
+      if ($include == "secretaire") {
+          include("admin/secretaire.php");
+      }
+      if ($include == "medecin") {
+          include("admin/medecin.php");
+      }
+      if ($include == "admin") {
+          include("admin/adminlist.php");
+      }
+  }
+  else{
+      include("admin/dashboard.php");
+  }
+    
+  ?>
+</div>
