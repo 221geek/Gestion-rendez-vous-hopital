@@ -127,3 +127,7 @@ table .checkbox{
     width: 25px;
     height: 25px;
 }
+.list-group .list-group-item-action{
+    display: flex;
+    justify-content: space-between;
+}

@@ -32,8 +32,6 @@
     <![endif]-->
 	<!-- Page Content -->
 	
-    <script src="views/js/moment.min.js"></script>
-    <script src="views/js/fullcalendar.min.js"></script>
 
     <div class="container">
 
