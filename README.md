@@ -22,15 +22,11 @@ cd /var/www/html/
 git clone https://github.com/221geek/Gestion-rendez-vous-hopital.git
 ```
 
-```
-until finished
-```
-
 ### Base de donnée
 
-  **importez le fichier hopital.sql dans dans phpmyadmin
+  ** importez le fichier hopital.sql dans dans phpmyadmin
 
-  **Modifier les information de connexion dans la classe /app/class/database.class.php (mot de passe et username de phpmyadmin)
+  ** Modifier les information de connexion dans la classe /app/class/database.class.php (mot de passe et username de phpmyadmin)
 
 ## Execution
 
@@ -51,12 +47,12 @@ Vous pous=vez aussi tester le projet en ligne sur **dalaljamm.cf
 
 ## Version
 
- **1.0
+ ** 1.0
 
 ## Auteurs
 
-   **Malick Diakhaté
-   **Abdoul Aziz Dione
+   ** Malick Diakhaté
+   ** Abdoul Aziz Dione
    
 ## License
 
